@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 상반기 워크샵 안내</title>
+    <title>2026 상반기 워크샵 안내 & 갤러리</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
     <style>
@@ -14,17 +14,17 @@
         .schedule-line { position: absolute; left: 23px; top: 0; bottom: 0; width: 2px; background: #e5e7eb; }
         .location-link { color: #2563eb; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; transition: opacity 0.2s; }
         .location-link:active { opacity: 0.6; }
-        
-        /* 부드러운 스크롤 애니메이션 효과 */
         html { scroll-behavior: smooth; }
+        #gallery-modal { transition: opacity 0.3s ease; }
     </style>
 </head>
 <body>
 
 <div class="mobile-container">
+    <!-- Hero Section: 요청하신 메인 이미지 적용 -->
     <div class="relative h-[440px] overflow-hidden bg-slate-900 flex items-center justify-center text-center px-6">
         <div class="absolute inset-0 opacity-60">
-            <img src="./Gemini_Generated_Image_bj1cavbj1cavbj1c.png" alt="팀원들이 벚꽃 아래서 점프하는 모습" class="w-full h-full object-cover">
+            <img src="./IMG_3787.JPG" alt="Workshop Main" class="w-full h-full object-cover">
         </div>
         <div class="relative z-10 text-white mt-10">
             <p class="text-xs tracking-[0.4em] mb-4 font-light opacity-90 uppercase">Team Building Workshop</p>
@@ -35,7 +35,36 @@
         </div>
     </div>
 
-    <div class="bg-slate-50 py-12 px-8">
+    <!-- Intro Message -->
+    <div class="py-16 px-10 text-center bg-white border-b border-gray-50">
+        <p class="text-gray-700 leading-relaxed text-[0.95rem] font-medium break-keep">
+            현장에서 함께 나눈 즐거웠던 순간들을<br>
+            추억으로 기록해 보았습니다.
+        </p>
+    </div>
+
+    <!-- 📸 워크샵 갤러리 섹션 -->
+    <div class="py-16 px-4 bg-slate-50 border-b border-gray-100">
+        <div class="text-center">
+            <span class="section-title">워크샵 갤러리</span>
+            <p class="text-[11px] text-gray-400 mb-6 mt-[-10px]">사진을 터치하면 크게 볼 수 있습니다.</p>
+        </div>
+        
+        <!-- 갤러리 그리드 영역 -->
+        <div id="gallery-grid" class="grid grid-cols-3 gap-1.5">
+            <!-- JavaScript가 여기에 이미지를 채웁니다 -->
+        </div>
+
+        <!-- 더보기 버튼 -->
+        <div id="view-more-container" class="mt-8 text-center hidden">
+            <button id="view-more-btn" onclick="loadMoreImages()" class="px-8 py-3 bg-white border border-gray-200 text-gray-600 text-sm font-semibold rounded-full shadow-sm active:bg-gray-50 transition-colors">
+                더보기 (+<span id="next-count">9</span>장)
+            </button>
+        </div>
+    </div>
+
+    <!-- 집결 및 안내 (기존 내용 유지) -->
+    <div class="bg-white py-12 px-8">
         <div class="text-center">
             <span class="section-title">집결 및 안내</span>
         </div>
@@ -71,7 +100,8 @@
         </div>
     </div>
 
-    <div class="py-16 px-8 bg-white">
+    <!-- Schedule (2일차 일정 변경 반영) -->
+    <div class="py-16 px-8 bg-slate-50">
         <div class="text-center">
             <span class="section-title">워크샵 세부 일정</span>
         </div>
@@ -92,7 +122,7 @@
                     </div>
                     <div class="relative pl-12">
                         <div class="absolute left-0 top-1 w-12 text-[10px] text-gray-400 font-black tracking-tighter">14:00</div>
-                        <h4 class="font-bold text-gray-800 text-[15px]"> 팀빌딩 액티비티 🥃</h4>
+                        <h4 class="font-bold text-gray-800 text-[15px]">팀빌딩 액티비티 🥃</h4>
                         <p class="text-xs text-gray-500 mt-1.5">
                             <a href="https://naver.me/xVBD7xpP" target="_blank" class="location-link">기원 위스키 증류소</a> 투어 
                             (<a href="https://blog.naver.com/kgoodn/224184705955" target="_blank" class="location-link">투어 후기</a>)
@@ -123,53 +153,55 @@
                 <div class="schedule-line"></div>
                 <div class="space-y-10">
                     <div class="relative pl-12">
+                        <div class="absolute left-0 top-1 w-12 text-[10px] text-gray-400 font-black tracking-tighter">10:00</div>
+                        <h4 class="font-bold text-gray-800 text-[15px]">벚꽃 산책 🌸🌿</h4>
+                        <p class="text-xs text-gray-500 mt-1.5"><a href="https://naver.me/GSDAiqZQ" target="_blank" class="location-link">다산생태공원</a> 힐링 산책</p>
+                    </div>
+                    <div class="relative pl-12">
                         <div class="absolute left-0 top-1 w-12 text-[10px] text-gray-400 font-black tracking-tighter">10:30</div>
                         <h4 class="font-bold text-gray-800 text-[15px]">아침 식사</h4>
                         <p class="text-xs text-gray-500 mt-1.5"><a href="https://naver.me/xCB7sO2z" target="_blank" class="location-link">기와집 순두부</a></p>
                     </div>
                     <div class="relative pl-12">
-                        <div class="absolute left-0 top-1 w-12 text-[10px] text-gray-400 font-black tracking-tighter">11:20</div>
-                        <h4 class="font-bold text-gray-800 text-[15px]">벚꽃 산책 🌸🌿</h4>
-                        <p class="text-xs text-gray-500 mt-1.5"><a href="https://naver.me/GSDAiqZQ" target="_blank" class="location-link">다산생태공원</a> 힐링 산책</p>
-                    </div>
-                    <div class="relative pl-12">
-                        <div class="absolute left-0 top-1 w-12 text-[10px] text-gray-400 font-black tracking-tighter">12:00</div>
+                        <div class="absolute left-0 top-1 w-12 text-[10px] text-gray-400 font-black tracking-tighter">11:00</div>
                         <h4 class="font-bold text-gray-800 text-[15px]">카페 및 귀가</h4>
-                        <p class="text-xs text-gray-500 mt-1.5"><a href="https://naver.me/5wW6ofO5" target="_blank" class="location-link">전망 좋은 카페</a>에서 티타임 후 해산</p>
+                        <p class="text-xs text-gray-500 mt-1.5"><a href="https://naver.me/5vcibnhK" target="_blank" class="location-link">전망 좋은 카페</a>에서 티타임 후 해산</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Menu Section (2x2 그리드 복구) -->
     <div class="bg-[#1e293b] py-16 px-8 text-white">
         <div class="text-center">
             <span class="section-title text-white">식사 안내</span>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-            <div class="p-5 bg-slate-800 border border-slate-700 rounded-2xl shadow-lg">
-                <h5 class="text-blue-400 text-[10px] font-black mb-2 uppercase tracking-widest">Day 1 Lunch</h5>
-                <p class="text-[15px] font-bold">김삿갓밥집 </p>
-                <p class="text-xs text-slate-300 mt-2 leading-relaxed font-light">전라도식 나물위주의 유기비빔그릇에 30찬의 상차림으로 워크샵의 첫 시작을 엽니다.</p>
+        <div class="grid grid-cols-2 gap-3 mt-4">
+            <div class="p-4 bg-slate-800 border border-slate-700 rounded-2xl shadow-lg">
+                <h5 class="text-blue-400 text-[9px] font-black mb-1 uppercase tracking-widest text-center">Day 1 Lunch</h5>
+                <p class="text-[13px] font-bold text-center">김삿갓밥집</p>
+                <p class="text-[10px] text-slate-400 mt-2 leading-relaxed font-light text-center break-keep">전라도식 나물 30찬 한정식</p>
             </div>
-            <div class="p-5 bg-slate-800 border border-slate-700 rounded-2xl shadow-lg">
-                <h5 class="text-blue-400 text-[10px] font-black mb-2 uppercase tracking-widest">Day 1 Dinner</h5>
-                <p class="text-[15px] font-bold">북한강 참나무 바베큐 </p>
-                <p class="text-xs text-slate-300 mt-2 leading-relaxed font-light">생오겹살, 된장/김치찌개, 신선한 쌈채소와 버섯 한 접시, 공기밥을 야외 테라스에서 즐겨보세요.</p>
+            <div class="p-4 bg-slate-800 border border-slate-700 rounded-2xl shadow-lg">
+                <h5 class="text-blue-400 text-[9px] font-black mb-1 uppercase tracking-widest text-center">Day 1 Dinner</h5>
+                <p class="text-[13px] font-bold text-center text-nowrap">참나무 바베큐</p>
+                <p class="text-[10px] text-slate-400 mt-2 leading-relaxed font-light text-center break-keep">생오겹살 & 야외 테라스 BBQ</p>
             </div>
-            <div class="p-5 bg-slate-800 border border-slate-700 rounded-2xl shadow-lg">
-                <h5 class="text-amber-400 text-[10px] font-black mb-2 uppercase tracking-widest">Night Snack & Drinks</h5>
-                <p class="text-[15px] font-bold">야식 & 주류</p>
-                <p class="text-xs text-slate-300 mt-2 leading-relaxed font-light">배달 치킨, 응셰프님 특선 소고기무국, 레몬샤베트, 과자, 컵라면, 맥주, 소주 등. (희망메뉴 사전주문 또는 개인 지참 가능)</p>
+            <div class="p-4 bg-slate-800 border border-slate-700 rounded-2xl shadow-lg">
+                <h5 class="text-amber-400 text-[9px] font-black mb-1 uppercase tracking-widest text-center">Night Snack</h5>
+                <p class="text-[13px] font-bold text-center">야식 & 주류</p>
+                <p class="text-[10px] text-slate-400 mt-2 leading-relaxed font-light text-center break-keep">치킨, 소고기무국, 레몬샤베트 등</p>
             </div>
-            <div class="p-5 bg-slate-800 border border-slate-700 rounded-2xl shadow-lg">
-                <h5 class="text-green-400 text-[10px] font-black mb-2 uppercase tracking-widest">Day 2 Breakfast</h5>
-                <p class="text-[15px] font-bold">기와집 순두부</p>
-                <p class="text-xs text-slate-300 mt-2 leading-relaxed font-light">전날의 피로를 부드럽게 풀어줄 속 편안한 순두부 조식.</p>
+            <div class="p-4 bg-slate-800 border border-slate-700 rounded-2xl shadow-lg">
+                <h5 class="text-green-400 text-[9px] font-black mb-1 uppercase tracking-widest text-center">Day 2 B-fast</h5>
+                <p class="text-[13px] font-bold text-center">기와집 순두부</p>
+                <p class="text-[10px] text-slate-400 mt-2 leading-relaxed font-light text-center break-keep">속 편안한 힐링 순두부 조식</p>
             </div>
         </div>
     </div>
 
+    <!-- Participants (기존 내용 유지) -->
     <div class="py-16 px-6 bg-white border-t border-gray-100">
         <div class="text-center">
             <span class="section-title">참석자 명단</span>
@@ -178,48 +210,125 @@
             <div>
                 <span class="px-5 py-2.5 bg-slate-800 text-white rounded-full text-[13px] font-bold shadow-md">유종열 상무님</span>
             </div>
-            
-            <div class="bg-gray-50 rounded-2xl p-4 border border-gray-100 shadow-sm">
+            <div class="bg-gray-50 rounded-2xl p-4 border border-gray-100">
                 <h5 class="text-[11px] font-black text-blue-600 mb-3 uppercase tracking-widest">인사팀</h5>
                 <div class="flex flex-wrap justify-center gap-2">
-                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200 shadow-sm">금종모 책임</span>
-                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200 shadow-sm">박광호 책임</span>
-                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200 shadow-sm">김정현 책임</span>
-                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200 shadow-sm">김응진 책임</span>
-                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200 shadow-sm">진휘민 책임</span>
-                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200 shadow-sm">김소영 선임</span>
-                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200 shadow-sm">정세빈 사원</span>
-                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200 shadow-sm">손정환 사원</span>
-                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200 shadow-sm">이다은 사원</span>
+                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200">금종모 책임</span>
+                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200">박광호 책임</span>
+                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200">김정현 책임</span>
+                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200">김응진 책임</span>
+                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200">진휘민 책임</span>
+                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200">김소영 선임</span>
+                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200">정세빈 사원</span>
+                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200">손정환 사원</span>
+                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200">이다은 사원</span>
                 </div>
             </div>
-
-            <div class="bg-gray-50 rounded-2xl p-4 border border-gray-100 shadow-sm">
+            <div class="bg-gray-50 rounded-2xl p-4 border border-gray-100">
                 <h5 class="text-[11px] font-black text-amber-600 mb-3 uppercase tracking-widest">조직개발팀</h5>
                 <div class="flex flex-wrap justify-center gap-2">
-                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200 shadow-sm">박남혜 책임</span>
-                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200 shadow-sm">김지은 책임</span>
-                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200 shadow-sm">유재호 선임</span>
-                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200 shadow-sm">최지혜 사원</span>
-                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200 shadow-sm">안휘영 사원</span>
+                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200">박남혜 책임</span>
+                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200">김지은 책임</span>
+                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200">유재호 선임</span>
+                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200">최지혜 사원</span>
+                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200">안휘영 사원</span>
                 </div>
             </div>
-
-            <div class="bg-gray-50 rounded-2xl p-4 border border-gray-100 shadow-sm">
+            <div class="bg-gray-50 rounded-2xl p-4 border border-gray-100">
                 <h5 class="text-[11px] font-black text-emerald-600 mb-3 uppercase tracking-widest">전략기획팀</h5>
                 <div class="flex flex-wrap justify-center gap-2">
-                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200 shadow-sm">김성섭 사원</span>
-                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200 shadow-sm">박현희 사원</span>
+                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200">김성섭 사원</span>
+                    <span class="px-3 py-1.5 bg-white text-gray-700 rounded-md text-[12px] font-medium border border-gray-200">박현희 사원</span>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Footer -->
     <div class="bg-slate-900 py-12 px-8 text-center text-slate-400 text-[10px] tracking-widest">
         <p class="mb-2 opacity-60 uppercase font-bold">워크샵 조직위원회</p>
         <p>|인사팀| 박광호 책임, 김소영 선임   |조직개발팀| 최지혜 사원</p>
     </div>
 </div>
+
+<!-- 이미지 확대 모달 -->
+<div id="gallery-modal" class="fixed inset-0 z-50 bg-black/95 hidden flex-col items-center justify-center p-4" onclick="closeModal()">
+    <button class="absolute top-6 right-6 text-white text-4xl">&times;</button>
+    <img id="modal-image" src="" class="max-w-full max-h-[85vh] object-contain rounded-sm shadow-2xl">
+    <p class="text-gray-400 text-xs mt-4 font-light">탭하여 닫기</p>
+</div>
+
+<script>
+    const allImages = [
+        'IMG_3657.JPG', 'IMG_3658.JPG', 'IMG_3659.JPG', 'IMG_3660.JPG', 'IMG_3661.JPG',
+        'IMG_3662.JPG', 'IMG_3663.JPG', 'IMG_3664.JPG', 'IMG_3665.JPG', 'IMG_3666.JPG',
+        'IMG_3667.JPG', 'IMG_3768.JPG', 'IMG_3769.JPG', 'IMG_3770.JPG', 'IMG_3771.JPG',
+        'IMG_3772.JPG', 'IMG_3773.JPG', 'IMG_3774.JPG', 'IMG_3775.JPG', 'IMG_3776.JPG',
+        'IMG_3777.JPG', 'IMG_3778.JPG', 'IMG_3779.JPG', 'IMG_3780.JPG', 'IMG_3781.JPG',
+        'IMG_3782.JPG', 'IMG_3783.JPG', 'IMG_3784.JPG', 'IMG_3785.JPG', 'IMG_3786.JPG',
+        'IMG_3788.JPG', 'IMG_3789.JPG', 'IMG_3790.JPG', 'IMG_3791.JPG'
+    ];
+
+    let currentIndex = 0;
+    const INITIAL_COUNT = 6;
+    const LOAD_COUNT = 9;
+
+    const grid = document.getElementById('gallery-grid');
+    const viewMoreBtn = document.getElementById('view-more-btn');
+    const viewMoreContainer = document.getElementById('view-more-container');
+    const nextCountSpan = document.getElementById('next-count');
+    const modal = document.getElementById('gallery-modal');
+    const modalImg = document.getElementById('modal-image');
+
+    function initGallery() {
+        loadImages(INITIAL_COUNT);
+    }
+
+    function loadImages(count) {
+        const nextLimit = Math.min(currentIndex + count, allImages.length);
+        
+        for (let i = currentIndex; i < nextLimit; i++) {
+            const imgName = allImages[i];
+            const item = document.createElement('div');
+            item.className = 'aspect-square overflow-hidden rounded-sm cursor-pointer bg-gray-200 shadow-sm';
+            item.onclick = () => openModal(`./${imgName}`);
+            item.innerHTML = `<img src="./${imgName}" class="w-full h-full object-cover hover:opacity-80 transition-opacity" loading="lazy">`;
+            grid.appendChild(item);
+        }
+
+        currentIndex = nextLimit;
+        updateButton();
+    }
+
+    function updateButton() {
+        if (currentIndex >= allImages.length) {
+            viewMoreContainer.classList.add('hidden');
+        } else {
+            viewMoreContainer.classList.remove('hidden');
+            const remaining = allImages.length - currentIndex;
+            nextCountSpan.innerText = Math.min(LOAD_COUNT, remaining);
+        }
+    }
+
+    function loadMoreImages() {
+        loadImages(LOAD_COUNT);
+    }
+
+    function openModal(src) {
+        modalImg.src = src;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+    }
+
+    initGallery();
+</script>
 
 </body>
 </html>
